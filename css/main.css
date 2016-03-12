@@ -1,0 +1,51 @@
+body {
+	background: #bee;
+}
+
+.Game-Area {
+	margin: 100px auto;
+	height:600px;
+	width: 700px;
+	/*background: white;*/
+	/*border: 5px groove gray;*/
+}
+.Tic-tac-toe-box {
+	height: 198px;
+	width: 198px;
+	border: 5px solid transparent;
+	/*background: white;*/
+}
+
+.Tic-tac-toe-box:hover {
+	border: 5px solid red;
+}
+
+.top {
+	border-bottom: 5px solid black;
+}
+.middle {
+	border-top: 5px solid black;	
+	border-bottom: 5px solid black;	
+}
+.bottom{
+	border-top: 5px solid black;
+}
+
+.left {
+	float:left;
+	border-right: 5px solid black;
+}
+.center {
+	float:left;
+	border-right: 5px solid black;
+	border-left: 5px solid black;
+}
+
+.right{
+	border-left: 5px solid black;
+	float:left;
+}
+
+.clear {
+	clear:both;
+}

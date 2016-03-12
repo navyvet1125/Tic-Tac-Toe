@@ -1,12 +1,17 @@
 body {
 	background: #bee;
+	font: 20px "Arial", sans-serif;
+
+}
+header {
+	text-align: center;
 }
 
 .Game-Area {
 	margin: 100px auto;
-	height:600px;
-	width: 700px;
-	/*background: white;*/
+	height:624px;
+	width: 624px;
+	background: white;
 	/*border: 5px groove gray;*/
 }
 .Tic-tac-toe-box {

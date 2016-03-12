@@ -11,7 +11,7 @@ header {
 	margin: 100px auto;
 	height:624px;
 	width: 624px;
-	background: white;
+	/*background: white;*/
 	/*border: 5px groove gray;*/
 }
 .Tic-tac-toe-box {
@@ -24,6 +24,62 @@ header {
 .Tic-tac-toe-box:hover {
 	border: 5px solid red;
 }
+.selected-O{
+	height: 198px;
+	width: 198px;
+	border: 5px solid transparent;
+}
+
+
+
+.selected-O::after{
+
+	height: 150px;
+	width: 150px;
+	border-radius: 100px;
+	border: 20px solid red;
+	/*background: white;*/
+	content: '';
+	position: absolute;
+	/*top: 50px;*/
+}
+
+.selected-X{
+	height: 198px;
+	width: 198px;
+	border: 5px solid transparent;
+}
+
+
+
+.selected-X::after{
+	content:'';
+    position:absolute;
+    /*top:inherit;*/
+	width:10px;
+    height:190px;
+    background-color:red;
+    transform-origin:50% 50%;
+    -webkit-transform:translateX(90px) rotate(45deg);
+    -moz-transform:translateX(90px) rotate(45deg);
+    transform: translateX(90px) rotate(45deg);
+}
+
+.selected-X::before{
+	content:'';
+    position:absolute;
+    /*top:inherit;*/
+	width:10px;
+    height:190px;
+    background-color:red;
+    transform-origin:50% 50%;
+    -webkit-transform:translateX(90px) rotate(-45deg);
+    -moz-transform:translateX(90px) rotate(-45deg);
+    transform: translateX(90px) rotate(-45deg);
+}
+
+
+
 
 .top {
 	border-bottom: 5px solid black;
@@ -54,3 +110,6 @@ header {
 .clear {
 	clear:both;
 }
+
+
+

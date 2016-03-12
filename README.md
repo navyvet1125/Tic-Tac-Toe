@@ -4,14 +4,14 @@ paragraph The goal of this program is to solve the problem of creating an intera
 
 ## The problem broken down
 
-+ ###Game flow Breakdown 
-+ + Index.html contains a number of divs that will be used in the game environment It will also call both main.css and app.js.
+###Game flow Breakdown 
++ Index.html contains a number of divs that will be used in the game environment It will also call both main.css and app.js.
 
-+ + Main.css contains all the css formatting for the game to load.
-+ + App.js contains all of the logic for the game, written in JavaScript.
++ Main.css contains all the css formatting for the game to load.
++ App.js contains all of the logic for the game, written in JavaScript.
 
-+ ### Game logic 
-+ + The JS app contains several functions.  Global variables and objects will be initialized first, followed by auxiliary functions, and finally main functions.  This is to prevent a function from possibly being called before it is loaded.
+### Game logic 
++ The JS app contains several functions.  Global variables and objects will be initialized first, followed by auxiliary functions, and finally main functions.  This is to prevent a function from possibly being called before it is loaded.
 
 
 

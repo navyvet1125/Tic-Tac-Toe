@@ -1,5 +1,4 @@
 body {
-	background: #bee;
 	font: 20px "Arial", sans-serif;
 
 }
@@ -12,7 +11,8 @@ header {
 	height:624px;
 	width: 624px;
 	/*background: white;*/
-	/*border: 5px groove gray;*/
+	border: 20px solid blue;
+	border-radius: 50px;
 }
 .Tic-tac-toe-box {
 	height: 198px;
@@ -37,7 +37,7 @@ header {
 	height: 150px;
 	width: 150px;
 	border-radius: 100px;
-	border: 20px solid red;
+	border: 20px solid green;
 	/*background: white;*/
 	content: '';
 	position: absolute;

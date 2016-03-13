@@ -9,17 +9,20 @@
 		<h1>Welcome to Tic-Tac-Toe</h1>
 	</header>
 	<section class ="Game-Area">
-		<div class ="Tic-tac-toe-box top left"><div class="selected-X"></div></div>
-		<div class ="Tic-tac-toe-box top center"><div class="selected-X"></div></div>
-		<div class ="Tic-tac-toe-box top right"></div>
+		<div id ="box00" class ="Tic-tac-toe-box top left" onclick="playerChoice(this)"></div>
+		<div id ="box01" class ="Tic-tac-toe-box top center" onclick="playerChoice(this)"></div>
+		<div id ="box02" class ="Tic-tac-toe-box top right" onclick="playerChoice(this)"></div>
 		<div class ="clear"></div>
-		<div class ="Tic-tac-toe-box middle left"></div>
-		<div class ="Tic-tac-toe-box middle center"><div class="selected-O"></div></div>
-		<div class ="Tic-tac-toe-box middle right"></div>
+		<div id ="box10" class ="Tic-tac-toe-box middle left" onclick="playerChoice(this)"></div>
+		<div id ="box11" class ="Tic-tac-toe-box middle center" onclick="playerChoice(this)"></div>
+		<div id ="box12" class ="Tic-tac-toe-box middle right" onclick="playerChoice(this)"></div>
 		<div class ="clear"></div>
-		<div class ="Tic-tac-toe-box bottom left"></div>
-		<div class ="Tic-tac-toe-box bottom center"><div class="selected-X"></div></div>
-		<div class ="Tic-tac-toe-box bottom right"></div>
+		<div id ="box20" class ="Tic-tac-toe-box bottom left" onclick="playerChoice(this)"></div>
+		<div id ="box21" class ="Tic-tac-toe-box bottom center" onclick="playerChoice(this)"></div>
+		<div id ="box22" class ="Tic-tac-toe-box bottom right" onclick="playerChoice(this)"></div>
+	</section>
+	<section>
+		<button>Restart</button>
 	</section>
 	<script type="text/javascript" src="js/app.js"></script>
 </body>

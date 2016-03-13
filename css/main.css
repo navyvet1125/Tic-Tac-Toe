@@ -6,11 +6,32 @@ header {
 	text-align: center;
 }
 
+.Game-info {
+	background: #ccc;
+	width:500px;
+	float: left;
+}
+
+.button {
+	border: 2px outset gray;
+	background: gray;
+
+}
+.button-clicked {
+	border: 2px inset gray;
+	background: gray;
+
+}
+
+
 .Game-Area {
+	position: absolute;
+	top: 100px;
+	left: 35%;
 	margin: 100px auto;
 	height:624px;
 	width: 624px;
-	/*background: white;*/
+	background: rgba(255,255,255,.75);
 	border: 20px solid blue;
 	border-radius: 50px;
 }

@@ -4,16 +4,24 @@ var gameBoard ={
 			[null,null,null]],
 	playerWins:0,
 	computerWins:0,
-	tiedGames:0,
+	catsGames:0,
 	isPlayerX: false,
 	gameStart: false
 };
+
+var updateScores = function(){
+	document.getElementById('playerScore').textContent =gameBoard.playerWins;
+	document.getElementById('computerScore').textContent =gameBoard.computerWins;
+	document.getElementById('catsScore').textContent =gameBoard.catsGames;
+	
+}
 
 var computerWin = function(){
 	gameBoard.gameStart =false;
 	gameBoard.computerWins++;
 	gameBoard.isPlayerX= false;
 	alert('I win!!!');
+	updateScores();
 }
 
 var playerWin = function(){
@@ -21,11 +29,15 @@ var playerWin = function(){
 	gameBoard.playerWins++;
 	gameBoard.isPlayerX= true;
 	alert('You win!!!');
+	updateScores();
 }
 
 var catsWin = function(){
-	alert('Cats Game!');
+	alert('Cat\'s Game!');
+	gameBoard.catsGames++;
 	gameBoard.gameStart =false;
+	updateScores();
+
 }
 
 var isSpaceClear = function(x,y) {
@@ -42,6 +54,28 @@ var isCatsGame = function() {
 	}
 	return true;
 }
+
+var decideWinner = function (whoWon){
+	var isPlayerX = gameBoard.isPlayerX;
+	if (whoWon==='X') {
+		if(isPlayerX) {
+		 	playerWin();
+		} else {
+			computerWin();
+		}
+	} else if (whoWon==='O') {
+		if(!isPlayerX) {
+		 	playerWin();
+		} else {
+			computerWin();
+		}
+
+	} else if(isCatsGame()) {
+		catsWin();
+	}
+
+}
+
 
 var getWinner = function () {
 	var checker = gameBoard.board;
@@ -126,58 +160,6 @@ var getWinner = function () {
 	}
 }
 
-
-var playerChoice = function (element) {
-	
-	if(gameBoard.gameStart && !isCatsGame() && !getWinner()) {
-		var elementIdString = element.id.toString();
-		var column = elementIdString[elementIdString.length-1];
-		var row = elementIdString[elementIdString.length-2];
-		
-		if (isSpaceClear(row, column)) {
-			if (gameBoard.isPlayerX) {
-				element.innerHTML ='<div class="selected-X"></div>';
-				gameBoard.board[row][column]='X';
-				
-			} else {
-				element.innerHTML ='<div class="selected-O"></div>';
-				gameBoard.board[row][column]='O';
-			}
-			var isWinner = getWinner();
-			var isCats = isCatsGame();
-			
-			if(!isWinner && !isCats){
-				computerChoice();
-				decideWinner(getWinner());
-			} else {
-				decideWinner(getWinner());
-			}
-		}
-	}
-}
-
-
-var decideWinner = function (whoWon){
-	var isPlayerX = gameBoard.isPlayerX;
-	if (whoWon==='X') {
-		if(isPlayerX) {
-		 	playerWin();
-		} else {
-			computerWin();
-		}
-	} else if (whoWon==='O') {
-		if(!isPlayerX) {
-		 	playerWin();
-		} else {
-			computerWin();
-		}
-
-	} else if(isCatsGame()) {
-		catsWin();
-	}
-
-}
-
 var computerChoice = function(){
 	var row = Math.floor(Math.random()*3);
 	var column = Math.floor(Math.random()*3);
@@ -196,12 +178,43 @@ var computerChoice = function(){
 	}
 }
 
-var startGame = function() {
-	clearBoard();
-	if(!gameBoard.isPlayerX) {
-		computerChoice();
+var playerChoice = function (element) {
+	if(gameBoard.gameStart && !isCatsGame() && !getWinner()) {
+		var elementIdString = element.id.toString();
+		var column = elementIdString[elementIdString.length-1];
+		var row = elementIdString[elementIdString.length-2];
+		
+		if (isSpaceClear(row, column)) {
+			if (gameBoard.isPlayerX) {
+				element.innerHTML ='<div class="selected-X"></div>';
+				gameBoard.board[row][column]='X';
+				
+			} else {
+				element.innerHTML ='<div class="selected-O"></div>';
+				gameBoard.board[row][column]='O';
+			}
+			if(!getWinner() && !isCatsGame()){
+				computerChoice();
+				decideWinner(getWinner());
+			} else {
+				decideWinner(getWinner());
+			}
+		}
 	}
-	gameBoard.gameStart= true;
+}
+
+
+
+var startGame = function(element) {
+	element.className='button-clicked';
+	window.setTimeout(function(){element.className='button';}, 200);
+	if(!gameBoard.gameStart) {
+		clearBoard();
+		if(!gameBoard.isPlayerX) {
+			computerChoice();
+		}
+		gameBoard.gameStart= true;
+	}
 }
 
 var clearBoard = function () {

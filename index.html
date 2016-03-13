@@ -8,6 +8,30 @@
 	<header>
 		<h1>Welcome to Tic-Tac-Toe</h1>
 	</header>
+	<section class ="Game-info">
+		<article>
+			<p><h2>Tic-Tac-Toe</h2>
+				<ul>
+					<li>Click in the area where you want to move.</li>
+					<li>Game continues until either the player or the computer gets tic-tac-toe or a cat's game has occured.</li>
+					<li>Once the game ends, press the start button again to restart the game.</li>
+					<li>The winner of the previous game will get to go first.</li>
+					<li>The computer always goes first whenever the the page reloads.</li>
+					<li>Have fun!</li>
+				</ul>
+				Press the start button to begin.
+			</p>
+		</article>
+		<a class="button" onclick="startGame(this)">start</a>
+		<article>
+			<h3>Score</h3>
+			<ul>
+				<li>Player: <span id ="playerScore"></span></li>
+				<li>Computer: <span id ="computerScore"></span></li>
+				<li>Cat's Game: <span id ="catsScore"></span></li>
+			</ul>
+		</article>
+	</section>
 	<section class ="Game-Area">
 		<div id ="box00" class ="Tic-tac-toe-box top left" onclick="playerChoice(this)"></div>
 		<div id ="box01" class ="Tic-tac-toe-box top center" onclick="playerChoice(this)"></div>
@@ -20,9 +44,6 @@
 		<div id ="box20" class ="Tic-tac-toe-box bottom left" onclick="playerChoice(this)"></div>
 		<div id ="box21" class ="Tic-tac-toe-box bottom center" onclick="playerChoice(this)"></div>
 		<div id ="box22" class ="Tic-tac-toe-box bottom right" onclick="playerChoice(this)"></div>
-	</section>
-	<section>
-		<button onclick ="startGame()">Start!</button>
 	</section>
 	<script type="text/javascript" src="js/app.js"></script>
 </body>

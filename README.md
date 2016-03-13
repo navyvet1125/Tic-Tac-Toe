@@ -25,8 +25,8 @@ paragraph The goal of this program is to solve the problem of creating an intera
 + isSpaceClear() will return a boolean value indicating whether or not the particular space is empty.
 + playerChoice(parameter) will update the game board appropriately based on the player's choice.
 + computerChoice() will update the game board appropriately based on the computer's choice.
-+ checkWinner() checks to see if three in a row has been obtained.
-+ checkCats() checks to see if board is full but three in a row has not been obtained.
++ getWinner() checks to see if three in a row has been obtained.
++ isCats() checks to see if board is full but three in a row has not been obtained.  Returns a boolean.
 
 ### Objects
 ####JavaScript Objects created will include:

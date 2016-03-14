@@ -1,5 +1,5 @@
 # Tic-Tac-Toe
-![Alt Tic-Tac-Toe Screenshot](images/Tictactoe1.jpeg)
+![Alt Tic-Tac-Toe Screenshot](image/Tictactoe1.jpeg)
 ## Introduction
 paragraph The goal of this program is to solve the problem of creating an interactive version of the game Tic-Tac-Toe using HTML, CSS, and JavaScript.
 

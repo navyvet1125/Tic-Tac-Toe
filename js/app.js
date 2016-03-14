@@ -1,3 +1,5 @@
+//Object gameBoard used to handle all game logic within JavaScript
+
 var gameBoard ={
 	board: [[null,null,null],
 			[null,null,null],
@@ -6,9 +8,10 @@ var gameBoard ={
 	computerWins:0,
 	catsGames:0,
 	isPlayerX: false,
-	gameStart: false
+	gameStart: false // This field determines whether or no
 };
 
+// Sends the player score, computer score, and the number of cat's games to index.html
 var updateScores = function(){
 	document.getElementById('playerScore').textContent =gameBoard.playerWins;
 	document.getElementById('computerScore').textContent =gameBoard.computerWins;
@@ -16,6 +19,7 @@ var updateScores = function(){
 	
 }
 
+// Handles the computer win event
 var computerWin = function(){
 	gameBoard.gameStart =false;
 	gameBoard.computerWins++;
@@ -23,7 +27,7 @@ var computerWin = function(){
 	alert('I win!!!');
 	updateScores();
 }
-
+// Handles the player win event
 var playerWin = function(){
 	gameBoard.gameStart =false;
 	gameBoard.playerWins++;
@@ -31,7 +35,7 @@ var playerWin = function(){
 	alert('You win!!!');
 	updateScores();
 }
-
+// Handles the Cat's Game event
 var catsWin = function(){
 	alert('Cat\'s Game!');
 	gameBoard.catsGames++;
@@ -39,15 +43,16 @@ var catsWin = function(){
 	updateScores();
 
 }
-
+// checks to see if the space in the board array is null
 var isSpaceClear = function(x,y) {
 	return (gameBoard.board[x][y]===null);
 }
 
+// Checks to see if there are any empty spaces left
 var isCatsGame = function() {
 	for (var x = 0; x<3; x++){
 		for (var y =0; y<3;y++){
-			if (gameBoard.board[x][y]===null) {
+			if (isSpaceClear(x,y)) {
 				return false;
 			}
 		}
